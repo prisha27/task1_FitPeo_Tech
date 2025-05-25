@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="bg-white h-16 px-6 flex items-center justify-between border-b border-gray-200">
       <div className="flex items-center">
-        <h1 className="text-xl font-bold text-cyan-400">Healthcare.</h1>
+        <h1 className="text-xl font-bold text-cyan-400">Health<span className='text-blue-900'>care.</span></h1>
       </div>
       
       <div className="flex items-center space-x-4">

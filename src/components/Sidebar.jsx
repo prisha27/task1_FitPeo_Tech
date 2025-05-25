@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Home, Clock, Calendar, Users,
   BarChart2, Clipboard, MessageSquare,
-  HelpCircle, Settings
+  HelpCircle, Settings,Menu
 } from 'lucide-react';
 
 const topLinks = [
@@ -20,10 +20,40 @@ const toolsLinks = [
 ];
 
 const Sidebar = () => {
+const [isSidebarOpen, setSidebarOpen] = useState(false);
+
   return (
-    <aside className="w-64 bg-white border-r border-gray-200  md:flex flex-col justify-between">
-   
-      <div className="p-6">
+    <>
+     <button o
+        className="md:hidden p-4 bg-blue-100 rounded-full text-blue-600 absolute top-20 left-1 z-50"
+        onClick={() => setSidebarOpen(true)}
+      >
+        <Menu size={24} />
+      </button>
+
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-30 z-40 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        ></div>
+      )}
+
+
+<aside
+  className={`
+    fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 z-50 transform
+    transition-transform duration-300 ease-in-out
+    ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+    md:translate-x-0 md:static md:flex
+    flex-col justify-between
+  `} >  
+
+  <button
+          className="absolute top-4 right-4 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        >
+        </button>
+      <div className="pt-6 pb-0 px-6">
         <h2 className="text-xs font-semibold text-gray-400 uppercase">
           General
         </h2>
@@ -48,7 +78,7 @@ const Sidebar = () => {
         </nav>
       </div>
 
-      <div className="px-6 -mt-40">
+      <div className="px-6 pt-0">
         <h2 className="text-xs font-semibold text-gray-400 uppercase">
           Tools
         </h2>
@@ -88,6 +118,7 @@ const Sidebar = () => {
         </ul>
       </div>
     </aside>
+    </>
   );
 };
 
