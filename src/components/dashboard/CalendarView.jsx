@@ -54,7 +54,7 @@ const calendarDays = [
 ];
 
 const CalendarView = () => (
-  <div className="ml-5 -mt-10">
+  <div className="ml-5 -mt-5">
 
     <div className="flex justify-between items-center mb-5">
       <span className="font-semibold text-gray-700 text-lg">October 2021</span>
@@ -68,11 +68,11 @@ const CalendarView = () => (
        
       </div>
     </div>
-    <div className="grid grid-cols-7 gap-2 text-center mb-6">
+    <div className="grid grid-cols-7 gap-5 text-center mb-7">
       {calendarDays.map((d, i) => (
         <div key={i}>
           <div
-            className={`text-xs mb-1 ${
+            className={`text-xs mb-5 ${
               d.selected ? "text-indigo-700 font-bold" : "text-gray-400"
             }`}
           >

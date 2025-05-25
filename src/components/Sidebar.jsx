@@ -24,21 +24,6 @@ const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <>
-     <button o
-        className="md:hidden p-4 bg-blue-100 rounded-full text-blue-600 absolute top-20 left-1 z-50"
-        onClick={() => setSidebarOpen(true)}
-      >
-        <Menu size={24} />
-      </button>
-
-      {isSidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-30 z-40 md:hidden"
-          onClick={() => setSidebarOpen(false)}
-        ></div>
-      )}
-
-
 <aside
   className={`
     fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 z-50 transform
@@ -53,7 +38,7 @@ const [isSidebarOpen, setSidebarOpen] = useState(false);
           onClick={() => setSidebarOpen(false)}
         >
         </button>
-      <div className="pt-6 pb-0 px-6">
+      <div className="pt-3 pb-0 px-6">
         <h2 className="text-xs font-semibold text-gray-400 uppercase">
           General
         </h2>
@@ -105,7 +90,7 @@ const [isSidebarOpen, setSidebarOpen] = useState(false);
 
 
       <div className="p-6 border-t border-gray-100">
-        <ul className="space-y-3">
+        <ul className="space-y-2">
           <li>
             <a
               href="#"
