@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Sidebar from "./components/Sidebar"
+import DashboardMainContent from "./components/DashboardMainContent"
 
 function App() {
 
@@ -9,6 +10,9 @@ function App() {
       <Header />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
+        <main className="flex-1 overflow-y-auto p-6">
+          <DashboardMainContent />
+          </main>
         </div>
         </div>
    </>
